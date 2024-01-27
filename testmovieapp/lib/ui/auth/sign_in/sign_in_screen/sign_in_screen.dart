@@ -7,6 +7,7 @@ import 'package:testmovieapp/ui/welcome/welcome_screen/welcome_screen.dart';
 import 'package:testmovieapp/widgets/custom_text_form_field.dart';
 import 'package:testmovieapp/widgets/custom_elevated_burron.dart';
 import '../../forget_password/forget_password_screen/forget_password_screen.dart';
+import '../sign_in_controller/sign_in_controller.dart';
 class SignIn extends StatelessWidget {
   SignIn({Key? key}) : super(key: key);
   TextEditingController email_controller = new TextEditingController();
@@ -14,6 +15,9 @@ class SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return GetBuilder<SignInController>(
+        init: SignInController(),
+    builder: (SignInController controller) {
     return Scaffold(body:SingleChildScrollView(
       child: Column(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.start
         ,
@@ -72,5 +76,7 @@ class SignIn extends StatelessWidget {
                 TextButton(onPressed: (){Get.to(()=>SignUp());}, child: Text("Sign up fo free",style: TextStyle(color: Color(0xff666666),fontWeight: FontWeight.w900),))],)],),),
         ],),
     ));
+    });
   }
+
 }
