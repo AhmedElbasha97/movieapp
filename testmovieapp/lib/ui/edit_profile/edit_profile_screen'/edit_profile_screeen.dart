@@ -1,12 +1,11 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:testmovieapp/widgets/custom_text_form_field.dart';
 import 'package:testmovieapp/widgets/custom_elevated_burron.dart';
 import '../edit_profile_controller/edit_profile_controller.dart';
-import 'package:testmovieapp/ui/edit_profile/edit_profile_controller/edit_profile_controller.dart';
+
 
 class EditProfile extends StatelessWidget {
   const EditProfile({Key? key}) : super(key: key);
