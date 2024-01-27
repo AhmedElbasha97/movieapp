@@ -13,7 +13,7 @@ class SignInController extends GetxController{
   onChanged(val){
     formkey.currentState?.validate();
   }
-  String? passwordValidator (value){
+  String? passwordValidator (String value){
     print(value);
     if(value!.isEmpty){
       return "Please Enter your Password";
@@ -23,7 +23,7 @@ class SignInController extends GetxController{
     }
     return null;
   }
-  String? emailValidator (value){
+  String? emailValidator (String value){
     print(value);
     if(value!.isEmpty){
       return "Please Enter your Email";
