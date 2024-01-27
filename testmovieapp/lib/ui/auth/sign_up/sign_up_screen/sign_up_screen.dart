@@ -64,13 +64,12 @@ class SignUp extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 27.0, right: 20.0, top: 10),
-                  child:
-                  CustomTextFormField(controller: email_controller,
+                  child: CustomTextFormField(controller: email_controller,
                     onChange: (String) {},
                     validator: (String) {},
                     keyboardType: TextInputType.emailAddress,
                     isPassField: false,
-                    textFieldTitle: '      Enter your email',),
+                    textFieldTitle: '      Enter your email', col: Colors.white, icon: Icon(Icons.abc,color: Colors.transparent,),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 30.0, top: 10),
@@ -86,7 +85,7 @@ class SignUp extends StatelessWidget {
                       validator: (String) {},
                       keyboardType: TextInputType.visiblePassword,
                       isPassField: true,
-                      textFieldTitle: "     Enter your Phone-no"),
+                      textFieldTitle: "     Enter your Phone-no", col: Colors.white, icon: Icon(Icons.abc,color: Colors.transparent,),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 30.0, top: 10),
@@ -97,12 +96,13 @@ class SignUp extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 27.0, right: 20.0, top: 10),
-                  child: CustomTextFormField(controller: password_controller,
+                  child: 
+                  CustomTextFormField(controller: password_controller,
                       onChange: (String) {},
                       validator: (String) {},
                       keyboardType: TextInputType.visiblePassword,
                       isPassField: true,
-                      textFieldTitle: "     Enter your password"),
+                      textFieldTitle: "     Enter your password", col: Colors.white, icon: Icon(Icons.abc,color: Colors.transparent,),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 30.0, top: 10),
@@ -113,12 +113,13 @@ class SignUp extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 27.0, right: 20.0, top: 10),
-                  child: CustomTextFormField(controller: password_controller,
+                  child:
+                  CustomTextFormField(controller: password_controller,
                       onChange: (String) {},
                       validator: (String) {},
                       keyboardType: TextInputType.visiblePassword,
                       isPassField: true,
-                      textFieldTitle: "     Re-enter password"),
+                      textFieldTitle: "     Re-enter password", col: Colors.white, icon: Icon(Icons.abc,color: Colors.transparent,),),
                 )
                 ,
                 Padding(

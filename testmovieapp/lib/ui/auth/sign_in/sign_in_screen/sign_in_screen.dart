@@ -53,16 +53,15 @@ class SignIn extends StatelessWidget {
             ),
               Padding(
                 padding: const EdgeInsets.only(left: 27.0,right: 20.0,top: 10),
-                child:
-                CustomTextFormField(controller:email_controller , onChange: (String){}, validator: (String){},
-                  keyboardType: TextInputType.emailAddress, isPassField: false, textFieldTitle: '      Enter your email',),
+                child: CustomTextFormField(controller:email_controller , onChange: (String){}, validator: (String){},
+                  keyboardType: TextInputType.emailAddress, isPassField: false, textFieldTitle: '      Enter your email', col: Colors.white, icon: Icon(Icons.abc,color: Colors.transparent,),),
               ),  Padding(
                 padding: const EdgeInsets.only(left: 30.0,top: 30),
                 child: Text("Password", style: TextStyle(color: Color(0xff0A0A0A),
                     fontWeight: FontWeight.w700,fontSize: 20)),
               ),Padding(
                 padding: const EdgeInsets.only(left: 27.0,right: 20.0,top: 10),
-                child: CustomTextFormField(controller: password_controller, onChange: (String){}, validator:(String){ }, keyboardType:TextInputType.visiblePassword, isPassField:true, textFieldTitle:"     Enter your password"),
+                child:CustomTextFormField(controller: password_controller, onChange: (String){}, validator:(String){ }, keyboardType:TextInputType.visiblePassword, isPassField:true, textFieldTitle:"     Enter your password", col: Colors.white, icon: Icon(Icons.abc,color: Colors.transparent,),),
               ),Padding(
                 padding: const EdgeInsets.only(left: 270.0),
                 child: TextButton(onPressed: (){Get.to(()=>ForgetPassword());}, child: Text("Forgot password",style: TextStyle(color: Color(0xff666666),fontWeight: FontWeight.w900),)),
