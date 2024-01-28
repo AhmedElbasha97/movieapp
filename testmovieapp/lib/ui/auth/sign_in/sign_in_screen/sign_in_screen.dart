@@ -4,8 +4,10 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:testmovieapp/ui/auth/sign_up/sign_up_screen/sign_up_screen.dart';
 import 'package:testmovieapp/ui/welcome/welcome_screen/welcome_screen.dart';
+import 'package:testmovieapp/utilities/colors.dart';
 import 'package:testmovieapp/widgets/custom_text_form_field.dart';
 import 'package:testmovieapp/widgets/custom_elevated_burron.dart';
+import '../../../../utilities/constant.dart';
 import '../../forget_password/forget_password_screen/forget_password_screen.dart';
 import '../sign_in_controller/sign_in_controller.dart';
 class SignIn extends StatelessWidget {
@@ -70,7 +72,8 @@ class SignIn extends StatelessWidget {
                 child: CustomButton(text: 'Sign in', onpressed: () {  }, col: Colors.white,),
               ),Row(crossAxisAlignment: CrossAxisAlignment.end,mainAxisAlignment: MainAxisAlignment.center,children: [Padding(
                 padding: const EdgeInsets.only(bottom: 13.0),
-                child: Text("Don’t have an account?",style: TextStyle(color: Color(0xff0A0A0A).withOpacity(0.8),fontWeight: FontWeight.w500),),
+                child: Text("Don’t have an account?",style: TextStyle(color:kPrimaryColor.withOpacity(0.8),fontWeight: FontWeight.w500,fontFamily: kFontFamilyName),),
+
               ),
                 TextButton(onPressed: (){Get.to(()=>SignUp());}, child: Text("Sign up fo free",style: TextStyle(color: Color(0xff666666),fontWeight: FontWeight.w900),))],)],),),
         ],),

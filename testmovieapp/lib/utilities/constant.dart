@@ -1,0 +1,1 @@
+String kFontFamilyName = "MochiyPopOne";
