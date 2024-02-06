@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:untitled10/trending/trending_screen.dart';
+import 'package:untitled10/ui/home/home_screen.dart';
 import 'package:untitled10/ui/welcome/welcome_screen.dart';
 import 'firebase_options.dart';
 
@@ -61,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner:false,
-      home: Trending(),
+      home:HomeScreen(),
     );
   }
 
