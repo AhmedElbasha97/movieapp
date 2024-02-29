@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:untitled10/ui/home/home_controller.dart';
+import 'package:untitled10/ui/movies/movies_screen.dart';
+import 'package:untitled10/ui/tv_shows/tv_shows_screen.dart';
 import '../../widgets/custom_elevated_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,7 +36,13 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        body: SingleChildScrollView(
+        body:controller.isLoading? Center(
+          child: LoadingAnimationWidget.twistingDots(
+            leftDotColor: const Color(0xFFe9d9e9),
+            rightDotColor: const Color(0xFF8a81d2),
+            size: 200,
+          ),
+        ): SingleChildScrollView(
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -139,7 +148,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(width: 200),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: (){
+                        Get.to(()=> TvShows());
+
+                      },
                       child: Text(
                         'See all',
                         style: TextStyle(
@@ -157,9 +169,9 @@ class HomeScreen extends StatelessWidget {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    itemCount: controller.tvShowImages.length,
+                    itemCount: controller.TVShow?.results?.length,
                     itemBuilder: (context, index) {
-                      return Image(image:AssetImage( controller.tvShowImages[index]),
+                      return Image(image:NetworkImage( "https://api.themoviedb.org/3/tv/series_id/season/season_number/images${controller.TVShow?.results?[index].posterPath??""}"),
                         fit: BoxFit.fill,
                       );
                     },
@@ -177,7 +189,9 @@ class HomeScreen extends StatelessWidget {
                     ),
                     SizedBox(width: 230),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(()=>Movies());
+                      },
                       child: Text(
                         'See all',
                         style: TextStyle(
@@ -195,9 +209,9 @@ class HomeScreen extends StatelessWidget {
                     shrinkWrap: true,
                     physics: NeverScrollableScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    itemCount: controller.tvShowImages.length,
+                    itemCount: controller.movie?.results?.length,
                     itemBuilder: (context, index) {
-                      return Image(image:AssetImage( controller.tvShowImages[index]),
+                      return Image(image:NetworkImage( "https://api.themoviedb.org/3/movie/movie_id/images${controller.movie?.results?[index].posterPath??""}"),
                         fit: BoxFit.fill,
                       );
                     },

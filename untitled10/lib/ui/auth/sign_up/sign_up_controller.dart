@@ -41,9 +41,12 @@ class SignUpController extends GetxController{
   String? confirmValidator (String? val){
     if(val!.isEmpty)
       return 'Empty';
-    if(val != password_controller.text)
+    else if(val != password_controller.text)
       return 'Not Match';
-    return null;
+    else if(!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(val))
+    {
+      return "Please Enter a Valid password";
+    }else return null;
   }
   String? emailValidator (String? value){
     print(value);

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "com.example.untitled10.app-merged_res-15:/drawable_launch_background.xml.flat",
-        "source": "com.example.untitled10.app-main-9:/drawable/launch_background.xml"
-    },
-    {
         "merged": "com.example.untitled10.app-merged_res-15:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.example.untitled10.app-main-9:/mipmap-xxxhdpi/ic_launcher.png"
     },

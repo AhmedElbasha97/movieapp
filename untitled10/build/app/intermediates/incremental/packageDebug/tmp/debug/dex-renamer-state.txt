@@ -1,4 +1,13 @@
-#Tue Feb 06 19:59:00 EET 2024
-base.0=C\:\\Users\\20128\\Documents\\GitHub\\movieapp\\untitled10\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Tue Feb 13 03:08:49 EET 2024
+base.0=C\:\\Users\\Arabtech\\Desktop\\movie\\untitled10\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Arabtech\\Desktop\\movie\\untitled10\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\Arabtech\\Desktop\\movie\\untitled10\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.3=C\:\\Users\\Arabtech\\Desktop\\movie\\untitled10\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
 path.0=classes.dex
+path.1=0/classes.dex
+path.2=0/classes.dex
+path.3=1/classes.dex
 renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex
+renamed.3=classes4.dex

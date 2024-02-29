@@ -1,11 +1,16 @@
+
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 class UserModel {
   final String? userName;
   final String? emailAddress;
   final String? password;
   final String? phoneNumber;
 
-  UserModel(
-      {this.userName, this.emailAddress, this.password, this.phoneNumber});
+  UserModel({this.userName, this.emailAddress, this.password, this.phoneNumber});
 
   factory UserModel.fromJason(Map<String, dynamic> json) =>
       UserModel(
@@ -29,5 +34,9 @@ class UserModel {
         password: map["password"] ?? '',
         phoneNumber:  map["phoneNumber"] ?? '',
     );
+  }
+  updateUserData()
+  async{
+
   }
 }
