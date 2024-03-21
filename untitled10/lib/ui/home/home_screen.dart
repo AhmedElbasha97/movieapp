@@ -136,8 +136,9 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(height: 20),
+
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       ' Tv-shows',
@@ -146,7 +147,7 @@ class HomeScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(width: 200),
+
                     TextButton(
                       onPressed: (){
                         Get.to(()=> TvShows());
@@ -171,14 +172,15 @@ class HomeScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: controller.TVShow?.results?.length,
                     itemBuilder: (context, index) {
-                      return Image(image:NetworkImage( "https://api.themoviedb.org/3/tv/series_id/season/season_number/images${controller.TVShow?.results?[index].posterPath??""}"),
+                      return Image(image:NetworkImage( "https://media.themoviedb.org/t/p/w220_and_h330_face${controller.TVShow?.results?[index].posterPath??""}"),
                         fit: BoxFit.fill,
                       );
                     },
                   ),
                 ),
-                const SizedBox(height: 20),
+
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Movies',
@@ -187,7 +189,7 @@ class HomeScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(width: 230),
+
                     TextButton(
                       onPressed: () {
                         Get.to(()=>Movies());
@@ -211,7 +213,7 @@ class HomeScreen extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: controller.movie?.results?.length,
                     itemBuilder: (context, index) {
-                      return Image(image:NetworkImage( "https://api.themoviedb.org/3/movie/movie_id/images${controller.movie?.results?[index].posterPath??""}"),
+                      return Image(image:NetworkImage( "https://media.themoviedb.org/t/p/w220_and_h330_face${controller.movie?.results?[index].posterPath??""}"),
                         fit: BoxFit.fill,
                       );
                     },

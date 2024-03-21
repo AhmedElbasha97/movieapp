@@ -22,85 +22,99 @@ class _TvShowsState extends State<TvShows> {
     return GetBuilder<TvShowsController>(
         init: TvShowsController(),
         builder: (TvShowsController controller) {
-          return  Scaffold(
-            body:controller.isLoading? Center(
-              child: LoadingAnimationWidget.twistingDots(
-                leftDotColor: const Color(0xFFe9d9e9),
-                rightDotColor: const Color(0xFF8a81d2),
-                size: 200,
-              ),
-            ):Column(
-              children: [
-                SizedBox(
-                  height: 50,
+          return  SafeArea(
+            child: Scaffold(
+              body:controller.isLoading? Center(
+                child: LoadingAnimationWidget.twistingDots(
+                  leftDotColor: const Color(0xFFe9d9e9),
+                  rightDotColor: const Color(0xFF8a81d2),
+                  size: 200,
                 ),
-                Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.keyboard_backspace_outlined,
-                          color: Color(0xff5F6162),
-                          size: 35,
-                        )),
-                    Text(
-                      "Tv Shows",
-                      style: TextStyle(
-                          color: Color(0xff5F6162),
-                          fontFamily: kPoppins,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 25),
-                    ),
-                    SizedBox(width: 185),
-                    IconButton(
-                        onPressed: () {},
-                        icon: Image(
-                          image: AssetImage("assets/images/SearchIcon.png"),
-                        ))
-                  ],
-                ),
-                Container(
-                  height: Get.height * 0.88,
-                  width: Get.width * 0.94,
-                  child: ListView.builder(
-                      itemCount: controller.data?.results?.length,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    height: 172,
-                                    width: 130,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(
-                                            color: Colors.transparent),
-                                        borderRadius:
-                                            BorderRadius.circular(20)),
-                                    child: Image(
-                                      image:
-                                          NetworkImage("https://api.themoviedb.org/3/tv/series_id/season/season_number/images${controller.data?.results?[index].posterPath??""}"),
-                                      fit: BoxFit.fill,
+              ):Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+            
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          IconButton(
+                              onPressed: () {Get.back();},
+                              icon: Icon(
+                                Icons.keyboard_backspace_outlined,
+                                color: Color(0xff5F6162),
+                                size: 35,
+                              )),
+                          Text(
+                            "Tv Shows",
+                            style: TextStyle(
+                                color: Color(0xff5F6162),
+                                fontFamily: kPoppins,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25),
+                          ),
+                        ],
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: Image(
+                            image: AssetImage("assets/images/SearchIcon.png"),
+                          ))
+                    ],
+                  ),
+                  Container(
+                    height: Get.height * 0.88,
+                    width: Get.width * 0.94,
+                    child: ListView.builder(
+                        physics: const  AlwaysScrollableScrollPhysics(),
+                        shrinkWrap: false,
+                        controller: controller.tvShowsController,
+                        itemCount: controller.data?.results?.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              InkWell(
+                                onTap: () {},
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      height: 172,
+                                      width: 130,
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.transparent),
+                                          borderRadius:
+                                              BorderRadius.circular(20)),
+                                      child: Image(
+                                        image:
+                                            NetworkImage("https://media.themoviedb.org/t/p/w220_and_h330_face${controller.data?.results?[index].posterPath??""}"),
+                                        fit: BoxFit.fill,
+                                      ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 20.0, left: 5),
-                                    child: Column(
+                                    SizedBox(width: 5,),
+                                    Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                          MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          controller.data?.results?[index].originalName??"",
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontFamily: kPoppins,
-                                              fontWeight: FontWeight.w700),
+            
+                                        Container(
+                                          width: Get.width*0.56,
+                                          child: Text(
+                                             controller.data?.results?[index].originalName??"",
+                                            maxLines: 3,
+                                            overflow: TextOverflow.fade,
+                                            softWrap: true,
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontFamily: kPoppins,
+                                                fontWeight: FontWeight.w700),
+                                          ),
                                         ),
                                         SizedBox(
                                           height: 5,
@@ -124,7 +138,7 @@ class _TvShowsState extends State<TvShows> {
                                               fontWeight: FontWeight.w500),
                                         ),
                                         SizedBox(
-                                          height: 30,
+                                          height: 5,
                                         ),
                                         InkWell(
                                             onTap: () {},
@@ -161,19 +175,19 @@ class _TvShowsState extends State<TvShows> {
                                                           25)),
                                             ))
                                       ],
-                                    ),
-                                  )
-                                ],
+                                    )
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                          ],
-                        );
-                      }),
-                )
-              ],
+                              SizedBox(
+                                height: 8,
+                              ),
+                            ],
+                          );
+                        }),
+                  )
+                ],
+              ),
             ),
           );
         });

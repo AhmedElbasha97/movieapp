@@ -22,9 +22,8 @@ class ApiServices extends GetxService{
   Dio dio = Dio();
 
   void init(){
-    dio.options.baseUrl = "https://api.themoviedb.org";
-    dio.options.connectTimeout = const Duration(milliseconds: 600000);
-    dio.options.receiveTimeout = const Duration(milliseconds: 600000);
+    dio.options.baseUrl = "https://api.themoviedb.org/3/discover";
+
     dio.interceptors.add(PrettyDioLogger(
       requestHeader: true,
       requestBody: true,
@@ -46,7 +45,7 @@ class ApiServices extends GetxService{
         Map<String, dynamic>? hedears,
         Map<String, dynamic>? queryParameters,
         //34an bekon nfe anoa3 tanya ze el html bs a7naa bn4t8l json f b7dd
-        String contentType = "application/json",
+
         Function(String errorMsg)? errorDialog,
         Function(String successMsg)? onSuccess,
         //f 7alat an fe error 7sl htb3lo da f message m4 k alert dialog
@@ -61,7 +60,6 @@ class ApiServices extends GetxService{
           queryParameters: queryParameters,
           options: Options(
               method: method,
-              contentType: contentType,
               headers: hedears)
       );
       if(response.statusCode != 200){

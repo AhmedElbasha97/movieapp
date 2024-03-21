@@ -23,7 +23,7 @@ class HomeController extends GetxController{
   }
   void getTvShows() async
   {
-    TVShow = await TvShowsServices.getTvShowsData();
+    TVShow = await TvShowsServices.getTvShowsData(1);
     isLoading= false;
     update();
     if(TVShow == null)
@@ -37,7 +37,7 @@ class HomeController extends GetxController{
   void getMovies() async
   {
 
-    movie = await MovieServices.getMoviesData();
+    movie = await MovieServices.getMoviesData(1);
     if(movie == null)
     {
       print("some error occured");
