@@ -47,8 +47,8 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Container(
-                  height: 400,
-                  width: 400,
+                  height: Get.height*0.45,
+                  width: Get.width,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
@@ -168,9 +168,9 @@ class HomeScreen extends StatelessWidget {
                   height: 200,
                   child: ListView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    itemCount: controller.TVShow?.results?.length,
+                    itemCount: 5,
                     itemBuilder: (context, index) {
                       return Image(image:NetworkImage( "https://media.themoviedb.org/t/p/w220_and_h330_face${controller.TVShow?.results?[index].posterPath??""}"),
                         fit: BoxFit.fill,
@@ -209,9 +209,9 @@ class HomeScreen extends StatelessWidget {
                   height: 200,
                   child: ListView.builder(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    itemCount: controller.movie?.results?.length,
+                    itemCount: 5,
                     itemBuilder: (context, index) {
                       return Image(image:NetworkImage( "https://media.themoviedb.org/t/p/w220_and_h330_face${controller.movie?.results?[index].posterPath??""}"),
                         fit: BoxFit.fill,
